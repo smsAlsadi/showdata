@@ -32,7 +32,30 @@ class DeviceController extends Controller
     
     return back();
     }
-   
+    public function deleteData($id){
+        $devices=Device::find($id);
+        $devices->delete();
+            return redirect("/home");
+    }
+    public function editDevice( Request $request ,$id){
+        if($request->isMethod('POST')){
+        $myProduct = Device::find($id);
+        $myProduct->Dname =$request->D_name;
+        $myProduct->Dnumber = $request->D_number;
+        $myProduct->Dprice = $request->D_price;
+        $myProduct->save();
+        return redirect("/home");
+        }else{
+            $data['device']=Device::findOrfail($id);
+            return view("elctronicDevices.editDev",$data);
+        }
     
+
+    }
+    
+    public function show($id){
+        $data['devic']=Device::find($id);
+        return view('elctronicDevices.detiles')->with($data);
+    }
     
 }

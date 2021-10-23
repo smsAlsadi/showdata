@@ -19,6 +19,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 </head>
 <body>
     <div   id="app">
@@ -36,16 +38,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                       
+                    
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         @auth
-                            <a class="navbar-brand"style="color:white" href="{{ url('/create') }}">Add Device</a>
+                            <a class="navbar-brand"style="color:white" href="{{ url('/create') }}"><i class="fas fa-plus"></i></i> Add Device</a>
  
                         @endauth
-                       
+                    
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
